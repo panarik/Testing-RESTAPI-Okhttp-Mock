@@ -37,4 +37,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
     androidTestImplementation 'com.android.support.test:rules:1.0.2'
+
+    //тест API
+    testImplementation 'io.rest-assured:rest-assured:4.3.0'
 }
