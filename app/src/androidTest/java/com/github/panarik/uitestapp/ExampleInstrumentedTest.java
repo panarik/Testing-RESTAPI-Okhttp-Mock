@@ -42,4 +42,11 @@ public class ExampleInstrumentedTest {
         onView(withId(R.id.navigation_home)).perform(click()).check(matches(isDisplayed()));
     }
 
+    @Test
+    public void clickButtonGet(){
+
+        onView(withId(R.id.button)).perform(click());
+        onView(withId(R.id.button)).check(matches(isDisplayed()));
+    }
+
 }
