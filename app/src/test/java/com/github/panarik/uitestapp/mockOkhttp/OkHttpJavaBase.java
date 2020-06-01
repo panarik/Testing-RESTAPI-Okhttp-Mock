@@ -22,20 +22,31 @@ public class OkHttpJavaBase {
         //server setup
         MockWebServer server = new MockWebServer();
         HttpUrl serverUrl;
-        MockResponse responseBody = new MockResponse();
+        MockResponse response = new MockResponse();
 
         //client setup
+        OkHttpClient client = new OkHttpClient();
         String requestBody;
+        Boolean isSuccessful;
 
 
+        //run server
+        server.start();
 
-        server.start(); //start our mock server
+        //configure server
         serverUrl = server.url("api/test"); //set server path
-        server.enqueue(responseBody.setBody("test body")); //set response body
+        server.enqueue(response
+                .setBody("test body") //set response body
+                .setResponseCode(200) //set response code
+        );
 
-        requestBody = sendGetRequest(new OkHttpClient(), serverUrl);
 
-        Assert.assertEquals("test body", requestBody); //test matcher
+        //run client
+        requestBody = sendGetRequest(client, serverUrl);
+
+        //matcher
+        Assert.assertEquals("test body", requestBody); //body equals
+
 
 
 
