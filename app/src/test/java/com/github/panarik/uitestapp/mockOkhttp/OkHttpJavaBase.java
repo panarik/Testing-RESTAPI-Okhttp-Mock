@@ -4,12 +4,9 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.io.IOException;
-
 import okhttp3.HttpUrl;
-import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
-import okhttp3.RequestBody;
+import okhttp3.Request;
 import okhttp3.Response;
 import okhttp3.mockwebserver.MockResponse;
 import okhttp3.mockwebserver.MockWebServer;
@@ -23,11 +20,10 @@ public class OkHttpJavaBase {
 
     //client setup
     OkHttpClient client = new OkHttpClient();
-    String requestBody;
-    Boolean isSuccessful;
+    String responseBody;
 
     @Before
-            public void setupMockServer() throws IOException {
+            public void setupMockServer() throws Exception {
         //run server
         server.start();
 
@@ -43,33 +39,29 @@ public class OkHttpJavaBase {
     @Test
     public void testOkHttp() throws Exception {
 
-
-
-
-
-
-
-
-        //run client
-        requestBody = sendGetRequest(client, serverUrl);
+        //run Get Request
+        responseBody = getRequest(client, serverUrl);
 
         //matcher
-        Assert.assertEquals("test body", requestBody); //body equals
-
-
+        Assert.assertEquals("test body", responseBody); //body equals
     }
 
-    private String sendGetRequest(OkHttpClient okHttpClient, HttpUrl base) throws IOException {
+    /*
+    method with parameters:
+     - client - for GET request object
+     - serverUrl - for configure server URL of GET request
+    */
+    public String getRequest(OkHttpClient client, HttpUrl serverUrl) throws Exception {
 
-        RequestBody body = RequestBody.create(MediaType.parse("text/plain"), "test body");
+        //run client request
+        Request request = new Request.Builder()
+                .url(serverUrl) //configure server URL of GET request
+                .build(); //run request
 
-        okhttp3.Request request = new okhttp3.Request.Builder()
-                .post(body)
-                .url(base)
-                .build();
-
-        Response response = okHttpClient.newCall(request).execute();
-        return response.body().string();
+        //run server response
+        try (Response response = client.newCall(request).execute()){
+            return response.body().string();
+        }
 
     }
 
