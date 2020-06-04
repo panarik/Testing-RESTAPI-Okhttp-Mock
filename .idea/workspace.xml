@@ -11,6 +11,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="76b5063f-2a96-4422-8b0d-b40ab4467d1d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/com/github/panarik/uitestapp/mockOkhttp/OkHttpJavaTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/test/java/com/github/panarik/uitestapp/mockOkhttp/OkHttpJavaBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/github/panarik/uitestapp/mockOkhttp/OkHttpJavaBase.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,8 +41,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Kotlin Class" />
-        <option value="Class" />
         <option value="JUnit4 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -87,7 +89,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Android JUnit.OkHttpJavaBase.testTimeouts">
+  <component name="RunManager" selected="Android JUnit.OkHttpJavaTest">
     <configuration name="OkHttpJavaBase.testOkHttp" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
       <module name="app" />
       <extension name="coverage">
@@ -122,7 +124,7 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OkHttpKotlinBase" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="OkHttpJavaTest" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
       <module name="app" />
       <extension name="coverage">
         <pattern>
@@ -131,24 +133,24 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.github.panarik.uitestapp.mockOkhttp" />
-      <option name="MAIN_CLASS_NAME" value="com.github.panarik.uitestapp.mockOkhttp.OkHttpKotlinBase" />
+      <option name="MAIN_CLASS_NAME" value="com.github.panarik.uitestapp.mockOkhttp.OkHttpJavaTest" />
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WireMockBase.testGet" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="OkHttpJavaTest.testOkHttp" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
       <module name="app" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.github.panarik.uitestapp.mock.*" />
+          <option name="PATTERN" value="com.github.panarik.uitestapp.mockOkhttp.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.github.panarik.uitestapp.mock" />
-      <option name="MAIN_CLASS_NAME" value="com.github.panarik.uitestapp.mock.WireMockBase" />
-      <option name="METHOD_NAME" value="testGet" />
+      <option name="PACKAGE_NAME" value="com.github.panarik.uitestapp.mockOkhttp" />
+      <option name="MAIN_CLASS_NAME" value="com.github.panarik.uitestapp.mockOkhttp.OkHttpJavaTest" />
+      <option name="METHOD_NAME" value="testOkHttp" />
       <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
@@ -263,11 +265,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Android JUnit.OkHttpJavaTest" />
+        <item itemvalue="Android JUnit.OkHttpJavaTest.testOkHttp" />
         <item itemvalue="Android JUnit.OkHttpJavaBase.testTimeouts" />
         <item itemvalue="Android JUnit.OkHttpJavaBase.testOkHttp" />
         <item itemvalue="Android Instrumented Tests.ExampleInstrumentedT..." />
-        <item itemvalue="Android JUnit.OkHttpKotlinBase" />
-        <item itemvalue="Android JUnit.WireMockBase.testGet" />
       </list>
     </recent_temporary>
   </component>
@@ -348,7 +350,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591275121354</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="OkHttp add shutdown server after tests">
+      <created>1591275583068</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1591275583068</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -384,7 +393,8 @@
     <MESSAGE value="OkHttp add annotations for setup server" />
     <MESSAGE value="OkHttp code refactoring for more information" />
     <MESSAGE value="OkHttp add timeout connection test" />
-    <option name="LAST_COMMIT_MESSAGE" value="OkHttp add timeout connection test" />
+    <MESSAGE value="OkHttp add shutdown server after tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="OkHttp add shutdown server after tests" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/UITestApp$TestGet_testResponse.ic" NAME="TestGet.testResponse Coverage Results" MODIFIED="1590525719651" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
