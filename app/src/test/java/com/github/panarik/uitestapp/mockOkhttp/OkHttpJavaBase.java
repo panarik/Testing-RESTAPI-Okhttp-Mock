@@ -1,9 +1,11 @@
 package com.github.panarik.uitestapp.mockOkhttp;
 
+import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.HttpUrl;
@@ -65,6 +67,11 @@ public class OkHttpJavaBase {
         //matcher
         Assert.assertEquals("test body", responseBody); //body equals
 
+    }
+
+    @After
+    public void stopMockServer() throws Exception {
+        server.shutdown();
     }
 
 
