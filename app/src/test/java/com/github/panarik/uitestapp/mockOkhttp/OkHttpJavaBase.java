@@ -4,6 +4,8 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.concurrent.TimeUnit;
+
 import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -46,10 +48,29 @@ public class OkHttpJavaBase {
         Assert.assertEquals("test body", responseBody); //body equals
     }
 
-    /*
-    method with parameters:
-     - client - for GET request object
-     - serverUrl - for configure server URL of GET request
+    @Test
+    public void testTimeouts() throws Exception {
+
+        //configure client for set timeout
+        client = new OkHttpClient.Builder()
+                .connectTimeout(20, TimeUnit.SECONDS)
+                .writeTimeout(20, TimeUnit.SECONDS)
+                .readTimeout(20, TimeUnit.SECONDS)
+                .callTimeout(20, TimeUnit.SECONDS)
+                .build();
+
+        //run Get Request
+        responseBody = getRequest(client, serverUrl);
+
+        //matcher
+        Assert.assertEquals("test body", responseBody); //body equals
+
+    }
+
+
+    /* method with parameters:
+       - client - for GET request object
+       - serverUrl - for configure server URL of GET request
     */
     public String getRequest(OkHttpClient client, HttpUrl serverUrl) throws Exception {
 
