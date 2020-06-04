@@ -30,22 +30,6 @@ class OkHttpKotlinBase {
     @Test
     fun queueTest() {
 
-
-        /*
-        sendGetRequest("http://localhost:8080/getMessage")
-        assertResponseMessage("1st message")
-        returnFromResponseActivity()
-
-        sendPostRequest("http://localhost:8080/getMessage")
-        assertResponseMessage("2nd message")
-        returnFromResponseActivity()
-
-        sendGetRequest("http://localhost:8080/getMessage")
-        assertResponseMessage("3rd message")
-        returnFromResponseActivity()
-        */
-
-
     }
 
 

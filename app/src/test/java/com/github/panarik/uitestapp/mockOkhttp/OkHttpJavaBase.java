@@ -1,6 +1,7 @@
 package com.github.panarik.uitestapp.mockOkhttp;
 
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -15,21 +16,18 @@ import okhttp3.mockwebserver.MockWebServer;
 
 public class OkHttpJavaBase {
 
-    @Test
-    public void testOkHttp() throws Exception, InterruptedException {
+    //server setup
+    MockWebServer server = new MockWebServer();
+    HttpUrl serverUrl;
+    MockResponse response = new MockResponse();
 
+    //client setup
+    OkHttpClient client = new OkHttpClient();
+    String requestBody;
+    Boolean isSuccessful;
 
-        //server setup
-        MockWebServer server = new MockWebServer();
-        HttpUrl serverUrl;
-        MockResponse response = new MockResponse();
-
-        //client setup
-        OkHttpClient client = new OkHttpClient();
-        String requestBody;
-        Boolean isSuccessful;
-
-
+    @Before
+            public void setupMockServer() throws IOException {
         //run server
         server.start();
 
@@ -39,6 +37,17 @@ public class OkHttpJavaBase {
                 .setBody("test body") //set response body
                 .setResponseCode(200) //set response code
         );
+    }
+
+
+    @Test
+    public void testOkHttp() throws Exception {
+
+
+
+
+
+
 
 
         //run client
@@ -46,8 +55,6 @@ public class OkHttpJavaBase {
 
         //matcher
         Assert.assertEquals("test body", requestBody); //body equals
-
-
 
 
     }
