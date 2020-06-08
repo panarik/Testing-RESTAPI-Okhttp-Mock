@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.github.panarik.uitestapp"
-        minSdkVersion 26
+        minSdkVersion 23
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -38,12 +38,12 @@ dependencies {
 
     androidTestImplementation 'com.android.support.test:rules:1.0.2'
 
+    //mock "okhttp"
+    androidTestImplementation("com.squareup.okhttp3:mockwebserver:4.7.2")
+
+
     //тест API
     testImplementation 'io.rest-assured:rest-assured:4.3.0'
-
-    //mock "okhttp"
-    testImplementation("com.squareup.okhttp3:mockwebserver:4.7.2")
-
 
     testImplementation 'org.testng:testng:6.9.6'
 

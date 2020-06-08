@@ -1,22 +1,8 @@
 package com.github.panarik.uitestapp.mockOkhttp;
 
-import org.junit.After;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
-
-import java.io.IOException;
-import java.util.concurrent.TimeUnit;
-
-import okhttp3.HttpUrl;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
-import okhttp3.mockwebserver.MockResponse;
-import okhttp3.mockwebserver.MockWebServer;
-
 public class OkHttpJavaBase {
 
+    /*
     //server setup
     MockWebServer server = new MockWebServer();
     HttpUrl serverUrl;
@@ -48,10 +34,7 @@ public class OkHttpJavaBase {
     }
 
 
-    /* method with parameters:
-       - client - for GET request object
-       - serverUrl - for configure server URL of GET request
-    */
+
     public String getRequest(OkHttpClient client, HttpUrl serverUrl) throws Exception {
 
         //run client request
@@ -66,4 +49,5 @@ public class OkHttpJavaBase {
 
     }
 
+    */
 }

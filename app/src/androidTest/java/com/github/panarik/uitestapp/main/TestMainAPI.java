@@ -1,8 +1,16 @@
-package com.github.panarik.uitestapp.mockOkhttp;
+package com.github.panarik.uitestapp.main;
 
-public class OkHttpJavaTest extends OkHttpJavaBase {
+import com.github.panarik.uitestapp.TestBase;
 
-    /*
+import org.junit.Assert;
+import org.junit.Test;
+
+import java.util.concurrent.TimeUnit;
+
+import okhttp3.OkHttpClient;
+
+public class TestMainAPI extends TestBase {
+
     @Test
     public void testOkHttp() throws Exception {
 
@@ -31,6 +39,4 @@ public class OkHttpJavaTest extends OkHttpJavaBase {
         Assert.assertEquals("test body", responseBody); //body equals
     }
 
-
-     */
 }
