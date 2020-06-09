@@ -1,5 +1,9 @@
 package com.github.panarik.uitestapp.main;
 
+
+import androidx.test.espresso.Espresso;
+import androidx.test.espresso.matcher.ViewMatchers;
+
 import com.github.panarik.uitestapp.R;
 import com.github.panarik.uitestapp.TestBase;
 
@@ -22,6 +26,11 @@ public class TestMainUI extends TestBase {
     public void clickButtonGet(){
         onView(withId(R.id.button)).perform(click());
         onView(withId(R.id.button)).check(matches(isDisplayed()));
+    }
+
+    @Test
+    public void swipeDown(){
+
     }
 
 
